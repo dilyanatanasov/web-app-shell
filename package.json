@@ -1,0 +1,22 @@
+{
+  "name": "movies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "cd backend && ts-node app.ts",
+    "frontend-angular": "cd frontend/angular/movies && ng serve",
+    "frontend-react": "cd frontend/react/movies && npm start",
+    "frontend-vue": "cd frontend/vue/movies && npm run serve",
+    "dev-angular": "concurrently \"npm run server\" \"npm run frontend-angular\"",
+    "dev-react": "concurrently \"npm run server\" \"npm run frontend-react\"",
+    "dev-vue": "concurrently \"npm run server\" \"npm run frontend-vue\""
+  },
+  "dependencies": {
+    "concurrently": "^6.5.1",
+    "react": "^18.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

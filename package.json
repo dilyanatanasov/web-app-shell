@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "cd backend && ts-node app.ts",
-    "frontend-angular": "cd frontend/angular/movies && ng serve",
+    "server": "cd backend && nodemon app.ts",
+    "frontend-angular": "cd frontend/angular/movie && ng serve",
     "frontend-react": "cd frontend/react/movies && npm start",
     "frontend-vue": "cd frontend/vue/movies && npm run serve",
     "dev-angular": "concurrently \"npm run server\" \"npm run frontend-angular\"",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "concurrently": "^6.5.1",
+    "nodemon": "^2.0.15",
     "react": "^18.0.0"
   },
   "keywords": [],

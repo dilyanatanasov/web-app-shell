@@ -1,0 +1,4 @@
+<button (click)="getMovies()">Get Movies</button>
+<ul *ngFor="let movie of movies">
+  <li><a routerLink="{{ movie.id }}">{{ movie.title }}</a></li>
+</ul>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -11,16 +11,27 @@ export class ListComponent implements OnInit {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
   getMovies() {
-    this.http.get("http://localhost:8081/api/movie")
-      .subscribe((res) => {
-        this.movies = res;
+    const user = JSON.parse(localStorage.getItem("loggedUser")!);
+    const accessToken = localStorage.getItem("accessToken");
+    if (user && accessToken) {
+      this.http.post("http://localhost:8081/api/getMovies", {
+          user: JSON.stringify(user)
+      },{
+        headers: {
+          "Authorization": accessToken
+        }
       })
+        .subscribe((res) => {
+          this.movies = res;
+        })
+    }
   }
 
 }

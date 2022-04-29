@@ -1,4 +1,6 @@
-<button (click)="getMovies()">Get Movies</button>
-<ul *ngFor="let movie of movies">
-  <li><a routerLink="{{ movie.id }}">{{ movie.title }}</a></li>
-</ul>
+<div class="list-container">
+  <button (click)="getMovies()">Get Movies</button>
+  <ul>
+    <li routerLink="{{ movie.id }}" *ngFor="let movie of movies">{{ movie.title }}</li>
+  </ul>
+</div>

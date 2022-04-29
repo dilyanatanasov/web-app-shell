@@ -1,0 +1,31 @@
+$dark_blue: #3156AD;
+$medium_blue: #7AA2FF;
+$light_blue: #5E8CFA;
+$dark_brown: #AD831F;
+$light_brown: #FACC5F;
+
+div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  nav {
+    width: 100%;
+    display: flex;
+
+    button {
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      margin-left: auto;
+      padding: 5px;
+    }
+  }
+
+  .app-container {
+    width: 100%;
+  }
+}

@@ -1,3 +1,38 @@
-
+.list-container {
+  width: 1200px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #5E8CFA;
+  border-radius: 5px;
+}
+.list-container button {
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+  background-color: #7AA2FF;
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  color: whitesmoke;
+  font-size: 20px;
+  transition: 200ms ease-in background-color;
+}
+.list-container button:hover {
+  background-color: #3156AD;
+  cursor: pointer;
+  transition: 200ms ease-in background-color;
+}
+.list-container ul li {
+  list-style-type: none;
+  padding: 5px 10px;
+  transition: 200ms ease-in background-color;
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 20px;
+}
+.list-container ul li:hover {
+  cursor: pointer;
+  background-color: #3156AD;
+  transition: 200ms ease-in background-color;
+}
 
 /*# sourceMappingURL=list.component.css.map */

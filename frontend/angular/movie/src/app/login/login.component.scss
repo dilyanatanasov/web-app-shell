@@ -1,0 +1,54 @@
+$dark_blue: #3156AD;
+$medium_blue: #7AA2FF;
+$light_blue: #5E8CFA;
+$dark_brown: #AD831F;
+$light_brown: #FACC5F;
+
+.form-container {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: $light_blue;
+  color: whitesmoke;
+
+  form {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    label {
+      width: 90%;
+      margin: 5px 0;
+    }
+
+    input {
+      width: 90%;
+      margin: 5px 0;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 95%;
+      margin: 20px 0;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      color: whitesmoke;
+      background-color: $dark_blue;
+      transition: 200ms ease-in background-color;
+
+      &:hover {
+        transition: 200ms ease-in background-color;
+        background-color: $medium_blue;
+        cursor: pointer;
+      }
+    }
+  }
+}

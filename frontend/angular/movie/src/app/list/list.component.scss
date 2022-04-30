@@ -1,0 +1,49 @@
+$dark_blue: #3156AD;
+$medium_blue: #7AA2FF;
+$light_blue: #5E8CFA;
+$dark_brown: #AD831F;
+$light_brown: #FACC5F;
+
+.list-container {
+  width: 1200px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $light_blue;
+  border-radius: 5px;
+
+  button {
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+    background-color: $medium_blue;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    color: whitesmoke;
+    font-size: 20px;
+    transition: 200ms ease-in background-color;
+
+    &:hover {
+      background-color: $dark_blue;
+      cursor: pointer;
+      transition: 200ms ease-in background-color;
+    }
+  }
+
+  ul {
+
+    li {
+      list-style-type: none;
+      padding: 5px 10px;
+      transition: 200ms ease-in background-color;
+      color: whitesmoke;
+      text-decoration: none;
+      font-size: 20px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $dark_blue;
+        transition: 200ms ease-in background-color;
+      }
+    }
+  }
+}

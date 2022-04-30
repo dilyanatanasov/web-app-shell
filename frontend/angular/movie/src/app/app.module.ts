@@ -8,6 +8,7 @@ import { MovieComponent } from './movie/movie.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {HttpClientModule} from "@angular/common/http";
+import {AuthguardService} from "./authguard.service";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

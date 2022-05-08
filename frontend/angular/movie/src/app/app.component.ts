@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {AuthguardService} from "./authguard.service";
+import {AuthguardService} from "./services/authguard.service";
 import {Subject} from "rxjs";
 
 @Component({
@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     localStorage.removeItem("loggedUser");
+    localStorage.removeItem("accessToken");
     this.authService.isLoggedIn.next(false);
     this.router.navigateByUrl("/login")
   }

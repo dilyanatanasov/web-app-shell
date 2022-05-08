@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListComponent } from './list/list.component';
-import { MovieComponent } from './movie/movie.component';
-import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { ListComponent } from './components/list/list.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import {HttpClientModule} from "@angular/common/http";
-import {AuthguardService} from "./authguard.service";
+import {AuthguardService} from "./services/authguard.service";
+import {ReactiveFormsModule} from "@angular/forms";
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import {AuthguardService} from "./authguard.service";
     ListComponent,
     MovieComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FileUploadComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule
+    ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]
 })

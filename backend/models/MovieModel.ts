@@ -15,6 +15,11 @@ export class MovieModel {
         return rows;
     }
 
+    async getMovie(id: number): Promise<Movie> {
+        const [rows] = await this.conn.query("SELECT * FROM `movies` WHERE id = ?", [id]);
+        return rows[0];
+    }
+
     async createMovie(createMovieInput: CreateMovieInput): Promise<boolean> {
         await this.conn.execute("INSERT INTO `movies`(title, duration, main_actor, genre)" +
             "VALUES (?, ?, ?, ?)", [
@@ -23,6 +28,20 @@ export class MovieModel {
                 createMovieInput.main_actor ? createMovieInput.main_actor : null,
                 createMovieInput.genre
         ]);
+        return true;
+    }
+
+    async updateMovie(id: number, movieData: any): Promise<boolean> {
+        const updateMovieDataArray = Object.entries(movieData);
+        let setStatement = "";
+        let preparedStatementData = [];
+        for (let i = 0; i < updateMovieDataArray.length; i++) {
+            setStatement += `${updateMovieDataArray[i][0]} = ?`;
+            setStatement += (i + 1 !== updateMovieDataArray.length) ? ", " : " ";
+            preparedStatementData.push(updateMovieDataArray[i][1]);
+        }
+        preparedStatementData.push(id);
+        await this.conn.execute(`UPDATE movies SET ${setStatement} WHERE id = ?`, preparedStatementData);
         return true;
     }
 
